@@ -14,7 +14,7 @@ module.exports = {
         const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                    .setCustomId('thebutton')
+                    .setCustomId('sub-yt')
                     .setLabel('Press me!')
                     .setStyle(ButtonStyle.Primary),
             );
