@@ -9,20 +9,23 @@ module.exports = (client) => {
             const filePath = `${pathFolder}/${folderOf}`;
             const componentsFile = fs.readdirSync(filePath).filter(file => file.endsWith('.js'));
 
-            const { Buttons } = client;
+            const {
+                buttons
+            } = client;
 
             switch (folderOf) {
                 case "buttons":
                     for (let fileOf of componentsFile) {
-                        const button = require(`${filePath}/${fileOf}`);
-                        Buttons.set(button.data.name,button);
+                        //const button = require(`${filePath}/${fileOf}`);
+                        const button = require(`../../components/buttons/${fileOf}`);
+                        buttons.set(button.data.name, button);
                     }
                     break;
-            
+
                 default:
                     break;
             }
-            
+
         }
 
     };
